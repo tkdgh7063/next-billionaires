@@ -7,3 +7,11 @@ export function formatPrice(value: number, currency: CurrencyCode) {
     currencyDisplay: "symbol",
   }).format(value);
 }
+
+export function formatNetWorth(value: number) {
+  if (value > 1000) {
+    return Math.floor(value / 1000).toString() + " Billion";
+  } else {
+    return value.toFixed(0).toString() + " Million";
+  }
+}

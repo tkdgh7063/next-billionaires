@@ -1,5 +1,6 @@
 "use client";
 
+import { formatNetWorth } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "@/components/billionaire.module.css";
@@ -27,21 +28,19 @@ export default function Billionaire({
     <div className={styles.container}>
       <img
         src={
-          // image === "https:undefined"
-          //   ? "https://specials-images.forbesimg.com/imageserve/5babb7f1a7ea4342a948b79a/416x416.jpg?background=000000&cropX1=748&cropX2=3075&cropY1=1753&cropY2=4082"
-          //   : image
-          image
+          image === "https:undefined"
+            ? "https://specials-images.forbesimg.com/imageserve/609326e285d4b3b1edcb9a78/416x416.jpg?background=000000&cropX1=2&cropX2=800&cropY1=2&cropY2=800"
+            : image
         }
         alt={name}
         onClick={onClick}
       />
       <Link prefetch href={`/${id}`}>
+        <span className={styles.name}>{name}</span>
         <div>
-          <span>{name}</span>
-          <div>
-            <span>{netWorth}</span>
-            <span>{industry}</span>
-          </div>
+          <span>
+            {formatNetWorth(netWorth)} / {industry}
+          </span>
         </div>
       </Link>
     </div>
