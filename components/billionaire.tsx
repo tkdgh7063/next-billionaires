@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import styles from "./billionaire.module.css";
+import styles from "@/components/billionaire.module.css";
 
 interface BillionaireProps {
   id: string;
@@ -27,14 +27,15 @@ export default function Billionaire({
     <div className={styles.container}>
       <img
         src={
-          image === "https:undefined"
-            ? "https://specials-images.forbesimg.com/imageserve/5babb7f1a7ea4342a948b79a/416x416.jpg?background=000000&cropX1=748&cropX2=3075&cropY1=1753&cropY2=4082"
-            : image
+          // image === "https:undefined"
+          //   ? "https://specials-images.forbesimg.com/imageserve/5babb7f1a7ea4342a948b79a/416x416.jpg?background=000000&cropX1=748&cropX2=3075&cropY1=1753&cropY2=4082"
+          //   : image
+          image
         }
         alt={name}
         onClick={onClick}
       />
-      <Link prefetch href={`/:id`}>
+      <Link prefetch href={`/${id}`}>
         <div>
           <span>{name}</span>
           <div>
