@@ -1,6 +1,6 @@
-import Billionaire from "../components/Billionaire";
-import { getBillionaires } from "../lib/api";
-import "../styles/global.css";
+import Billionaire from "@/components/Billionaire";
+import { getBillionaires } from "@/lib/api";
+import "@/styles/global.css";
 
 export default async function Home() {
   const billionaires = await getBillionaires();
