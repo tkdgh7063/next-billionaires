@@ -26,12 +26,14 @@ export default async function BillionDetailPage({
     <div key={id} className={styles.container}>
       <div>
         <Suspense fallback={<h1>Loading Detail...</h1>}>
+          {/* @ts-expect-error Async server component */}
           <BillionaireDetail key={id} id={id} />
         </Suspense>
       </div>
       <div className={styles.assets}>
         <h2>Financial Assets</h2>
         <Suspense fallback={<h1>Loading Financial Assets...</h1>}>
+          {/* @ts-expect-error Async server component */}
           <FinancialAsset id={id} />
         </Suspense>
       </div>
