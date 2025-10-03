@@ -3,6 +3,7 @@ import FinancialAsset from "@/components/financial-asset";
 import { getBillionaire } from "@/lib/api";
 import { Metadata } from "next";
 import { Suspense } from "react";
+import styles from "./detail.module.css";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -22,14 +23,14 @@ export default async function BillionDetailPage({
   const { id } = await params;
 
   return (
-    <div key={id}>
+    <div key={id} className={styles.container}>
       <div>
         <Suspense fallback={<h1>Loading Detail...</h1>}>
           {/* @ts-expect-error Async server component */}
           <BillionaireDetail key={id} id={id} />
         </Suspense>
       </div>
-      <div>
+      <div className={styles.assets}>
         <h2>Financial Assets</h2>
         <Suspense fallback={<h1>Loading Financial Assets...</h1>}>
           {/* @ts-expect-error Async server component */}

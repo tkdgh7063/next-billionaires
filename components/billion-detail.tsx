@@ -18,6 +18,7 @@ export default async function BillionaireDetail({ id }: { id: string }) {
       <h2>{data.name}</h2>
       <h4>Networth: {formatNetWorth(data.netWorth)}</h4>
       <h4>Country: {data.country}</h4>
+      <h4>City: {data.city}</h4>
       <h4>Industry: {data.industries}</h4>
       <p>{data.bio}</p>
     </div>

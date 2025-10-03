@@ -7,7 +7,7 @@ export default async function FinancialAsset({ id }: { id: string }) {
   return (
     <div className={styles.container}>
       {data.financialAssets.map((asset, index) => (
-        <div key={index}>
+        <div key={index} className={styles.box}>
           <span>Ticker: {asset.ticker}</span>
           <span>Shares: {asset.numberOfShares.toLocaleString()}</span>
           {asset.exerciseOptionPrice ? (
