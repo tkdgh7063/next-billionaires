@@ -36,9 +36,9 @@ export default function Billionaire({
         onClick={onClick}
       />
       <Link prefetch href={`/${id}`}>
-        <span className={styles.name}>{name}</span>
+        <div className={styles.name}>{name}</div>
         <div>
-          <span>
+          <span className={styles.detail}>
             {formatNetWorth(netWorth)} / {industry}
           </span>
         </div>
