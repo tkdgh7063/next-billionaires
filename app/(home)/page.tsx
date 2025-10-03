@@ -1,4 +1,4 @@
-import Billionaire from "@/components/Billionaire";
+import Billionaire from "@/components/billionaire";
 import { getBillionaires } from "@/lib/api";
 import styles from "./home.module.css";
 
