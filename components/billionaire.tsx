@@ -22,7 +22,7 @@ export default function Billionaire({
 }: BillionaireProps) {
   const router = useRouter();
   const onClick = () => {
-    router.push(`/${id}`);
+    router.push(`/person/${id}`);
   };
   return (
     <div className={styles.container}>
@@ -35,7 +35,7 @@ export default function Billionaire({
         alt={name}
         onClick={onClick}
       />
-      <Link prefetch href={`/${id}`}>
+      <Link prefetch href={`/person/${id}`}>
         <div className={styles.name}>{name}</div>
         <div>
           <span className={styles.detail}>
