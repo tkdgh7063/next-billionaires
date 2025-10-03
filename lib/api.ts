@@ -61,7 +61,7 @@ interface BillionaireDetail extends Billionaire {
   city: string;
   country: string;
   position: number;
-  financialAssets: financialAsset[];
+  financialAssets?: financialAsset[];
   bio: string[];
 }
 

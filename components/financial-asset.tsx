@@ -6,7 +6,7 @@ export default async function FinancialAsset({ id }: { id: string }) {
   const data = await getBillionaire(id);
   return (
     <div className={styles.container}>
-      {data.financialAssets.map((asset, index) => (
+      {data.financialAssets?.map((asset, index) => (
         <div key={index} className={styles.box}>
           <span>Ticker: {asset.ticker}</span>
           <span>Shares: {asset.numberOfShares.toLocaleString()}</span>
